@@ -6,8 +6,7 @@ export default function ReloadPokemons() {
     const router = useRouter()
 
     const handleRefresh = () => {
-        // router.refresh()
-        window.location.reload()
+      router.refresh()
     }
   return (
     <Button 

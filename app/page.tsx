@@ -42,7 +42,7 @@ export default async function IndexPage() {
         </div>
       </article>
       <div className="flex flex-col items-center gap-2">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {pokemons.map((pokemon: any) => (
             <Suspense fallback={<PokemonSkeleton />}>
               <PokemonCard key={pokemon?.url} pokemon={pokemon} />
