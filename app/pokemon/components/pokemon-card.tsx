@@ -12,7 +12,7 @@ import Image from "next/image";
 import { sleep } from "@/lib/utils";
 
 const fecthPokemonByUrl = async (url: string) => {
-    // await sleep(3000 + Math.floor(Math.random() * 10000) + 1000)
+    await sleep(3000 + Math.floor(Math.random() * 10000) + 1000)
     const res = await fetch(url);
     const pokemon = await res.json();
     return pokemon;

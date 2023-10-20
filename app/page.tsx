@@ -2,6 +2,7 @@ import { PokemonCard } from "@/app/pokemon/components/pokemon-card"
 import PokemonSkeleton from "@/app/pokemon/components/pokemon-skeleton"
 import { Suspense } from "react"
 import ReloadPokemons from "./pokemon/components/reload-pokemons"
+import { sleep } from "@/lib/utils"
 
 const fetchPokemons = async (page = 1) => {
   // await sleep(2000)
@@ -13,6 +14,7 @@ const fetchPokemons = async (page = 1) => {
 }
 
 const getRandomPokemons = async () => {
+  await sleep(2000)
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
   const { results } = await res.json()
   const randomPokemons = results.sort(() => Math.random() - Math.random()).slice(0, 10)

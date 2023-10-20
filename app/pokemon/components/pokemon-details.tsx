@@ -22,7 +22,6 @@ import {
   CardTitle,
 } from "../../../components/ui/card"
 import { Input } from "../../../components/ui/input"
-import { Separator } from "../../../components/ui/separator"
 
 export default async function PokemonDetails(props: { pokemon: any }) {
   const pokemonImg = props?.pokemon?.sprites?.other?.dream_world?.front_default
@@ -66,14 +65,14 @@ export default async function PokemonDetails(props: { pokemon: any }) {
         </CardHeader>
         <AspectRatio
           // ratio={16 / 9}
-          ratio={1}
+          ratio={3}
           className="flex items-center justify-center bg-muted"
         >
           <Image
             src={pokemonImg}
             alt="Pokemon img"
-            height={300}
-            width={300}
+            height={200}
+            width={200}
             className="rounded-md object-cover"
           />
         </AspectRatio>

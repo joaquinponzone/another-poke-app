@@ -3,7 +3,7 @@ import { sleep } from "@/lib/utils"
 
 
 const fecthPokemonByName = async (name?: string | null) => {
-  // sleep(2000)
+  sleep(2000)
   if (!name) return Promise.resolve(null)
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
   const pokemon = await res.json()
