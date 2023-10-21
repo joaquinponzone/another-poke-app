@@ -12,14 +12,14 @@ import Image from "next/image";
 import { sleep } from "@/lib/utils";
 
 const fecthPokemonByUrl = async (url: string) => {
-    await sleep(3000 + Math.floor(Math.random() * 10000) + 1000)
     const res = await fetch(url);
     const pokemon = await res.json();
     return pokemon;
 }; 
 
-export async function PokemonCard(props: { pokemon: any }) {
-    const pokemon = await fecthPokemonByUrl(props.pokemon?.url);
+export async function PokemonCard({ index }: { index: string}) {
+    const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${index}`
+    const pokemon = await fecthPokemonByUrl(pokemonURL);
 
   return (
         <Card className={`

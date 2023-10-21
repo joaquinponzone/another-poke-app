@@ -1,9 +1,9 @@
 
-interface PokemonLayoutProps {
+interface PacksLayoutProps {
   children: React.ReactNode
 }
 
-export default function PokemonLayout({ children }: PokemonLayoutProps) {
+export default function PacksLayout({ children }: PacksLayoutProps) {
   return (
     <>
         <div className="relative flex min-h-screen flex-col p-16">
