@@ -7,13 +7,22 @@ import PokemonSkeleton from "../pokemon/components/pokemon-skeleton"
 export default function ShufflePokemons() {
   const [newChunk, setNewChunk] = useState<number[]>([])
 
+  const generateUniqueRandomNumbers = (amount: number, max: number): number[] => {
+    const randomNumbers: number[] = [];
+    while (randomNumbers.length < amount) {
+      const randomNumber = Math.floor(Math.random() * max) + 1;
+      if (!randomNumbers.includes(randomNumber)) {
+        randomNumbers.push(randomNumber);
+      }
+    }
+    return randomNumbers;
+  }
+
   const handleShuffle = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault()
-    const randomNumbers = Array.from({ length: 3 }, () =>
-      Math.floor(Math.random() * 151) + 1
-    )
+    const randomNumbers = generateUniqueRandomNumbers(3, 151)
     setNewChunk(randomNumbers)
   }
 

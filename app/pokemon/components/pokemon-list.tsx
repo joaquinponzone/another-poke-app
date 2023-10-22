@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 import { PokemonCard } from "./pokemon-card"
 import PokemonSkeleton from "./pokemon-skeleton"
-import ReloadPokemons from "./reload-pokemons"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8])

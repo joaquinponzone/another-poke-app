@@ -43,10 +43,10 @@ export default function FavoritesPokemons() {
           </p>
         </div>
       </article>
-      <div className="flex items-center justify-center gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {favs?.map((idx: any) => (
           <Suspense key={idx} fallback={<PokemonSkeleton />}>
-            <PokemonCard key={idx} index={idx} />
+            <PokemonCard key={idx} index={idx}/>
           </Suspense>
         ))}
       </div>

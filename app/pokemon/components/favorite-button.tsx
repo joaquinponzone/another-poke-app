@@ -1,13 +1,10 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
 
 export default function FavoriteButton({pokemon}: {pokemon: any}) {
     const [isFavorite, setIsFavorite] = useState<boolean>(false)
-    const router = useRouter()
     const handleToggleFavorite = async () => {
         const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
         const isFavorite = favorites.includes(pokemon.id);
@@ -19,7 +16,6 @@ export default function FavoriteButton({pokemon}: {pokemon: any}) {
             localStorage.setItem("favorites", JSON.stringify(favorites));
         }
         setIsFavorite(!isFavorite);
-        router.refresh();
     }
 
     useEffect(() => {

@@ -9,8 +9,6 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { sleep } from "@/lib/utils";
-import { Icons } from "@/components/icons";
 import FavoriteButton from "./favorite-button";
 
 const fecthPokemonByUrl = async (url: string) => {
