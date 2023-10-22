@@ -29,7 +29,7 @@ export default function PokemonDetailsSkeleton() {
           </form>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Button size={"xl"} className="w-full" variant="ghost">
+          <Button size={"xl"} className="w-full" variant="ghost" disabled>
             Volver
           </Button>
         </CardFooter>

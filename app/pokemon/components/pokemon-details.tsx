@@ -22,8 +22,10 @@ import {
   CardTitle,
 } from "../../../components/ui/card"
 import { Input } from "../../../components/ui/input"
+import { useRouter } from "next/navigation"
 
 export default async function PokemonDetails(props: { pokemon: any }) {
+  const router = useRouter()
   const pokemonImg = props?.pokemon?.sprites?.other?.dream_world?.front_default
   const pokemonData = {
     name: props?.pokemon?.name,
@@ -64,8 +66,7 @@ export default async function PokemonDetails(props: { pokemon: any }) {
           </CardDescription>
         </CardHeader>
         <AspectRatio
-          // ratio={16 / 9}
-          ratio={3}
+          ratio={2}
           className="flex items-center justify-center bg-muted"
         >
           <Image
@@ -88,7 +89,7 @@ export default async function PokemonDetails(props: { pokemon: any }) {
                   <div className="grid w-full items-center gap-4 lg:grid-cols-3">
                     {Object.entries(pokemonData.stats).map(([key, value]) => {
                       return (
-                        <div className="flex flex-col" key={key}>
+                        <div className="flex flex-col" key={`${key}-${value}`}>
                           <Label className="mb-1">{key}</Label>
                           <Input
                             type="text"
@@ -112,9 +113,9 @@ export default async function PokemonDetails(props: { pokemon: any }) {
                 <AccordionContent>
                   <ul className="flex gap-2 p-4">
                   <div className="grid w-full items-center gap-4 lg:grid-cols-3">
-                    {Object.entries(pokemonData.specialStats).map(([key, value]) => {
+                    {Object?.entries(pokemonData.specialStats).map(([key, value]) => {
                       return (
-                        <div className="flex flex-col" key={key}>
+                        <div className="flex flex-col" key={`${key}-${value}`}>
                           <Label className="mb-1">{key}</Label>
                           <Input
                             type="text"
@@ -140,7 +141,7 @@ export default async function PokemonDetails(props: { pokemon: any }) {
                     {Object.entries(pokemonData.moves).map((move, i) => {
                       return (
                         <>
-                          <span className="text-lg">{`${i !== 0 ? "/" : ""} ${move[1]}`}</span>
+                          <span key={`${move}-${i}`} className="text-lg">{`${i !== 0 ? "/" : ""} ${move[1]}`}</span>
                         </>
                       )
                     })}
@@ -151,11 +152,9 @@ export default async function PokemonDetails(props: { pokemon: any }) {
           </article>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Link href="/" className="w-full">
-            <Button size={"xl"} className="w-full" variant="ghost">
+            <Button size={"xl"} className="w-full" variant="ghost" onClick={()=>router.back()}>
               Volver
             </Button>
-          </Link>
         </CardFooter>
       </Card>
     </article>

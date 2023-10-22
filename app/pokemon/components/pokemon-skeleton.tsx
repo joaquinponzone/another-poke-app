@@ -6,7 +6,7 @@ export default function PokemonSkeleton() {
     <>
       <Card className={`
         flex flex-col items-center justify-center gap-2 rounded-md bg-gray-100 p-4
-        shadow-md hover:shadow-lg dark:bg-gray-900 lg:h-[400px] lg:w-64
+        shadow-md hover:shadow-lg dark:bg-gray-900 lg:h-[400px] lg:w-72
         `}>
             <CardHeader>
                 <CardTitle>
