@@ -20,10 +20,10 @@ export default function FavoritesPokemons() {
             <article className="flex flex-col items-center gap-4">
             <div className="flex max-w-[980px] flex-col items-center gap-4">
                 <h1 className="font-extrabold leading-tight tracking-tighter md:text-4xl lg:text-6xl">
-                You don not have any favorite pokemon yet
+                  {`You don't have any favorite pokemon yet`}
                 </h1>
                 <p className=" text-xl text-muted-foreground">
-                Go to the <a href="/shuffle">pokemons page</a> and add some!
+                  Go to the <a href="/shuffle">shuffle pokemons page</a> and add some!
                 </p>
             </div>
             </article>
