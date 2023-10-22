@@ -19,8 +19,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/joaquinponzone",
-    docs: "https://ui.shadcn.com",
+    twitter: "https://twitter.com/jponzone",
+    github: "https://github.com/joaquinponzone/another-poke-app",
+    docs: "",
   },
 }
