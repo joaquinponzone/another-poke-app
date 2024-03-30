@@ -6,11 +6,10 @@ import { Button } from "@/components/ui/button"
 
 import { PokemonCard } from "./pokemon-card"
 import PokemonSkeleton from "./pokemon-skeleton"
-import { useToast } from "@/components/ui/use-toast"
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8])
-  
+
   const addNextEightSteps = (arr: number[]) => {
     const lastNumber = arr[arr.length - 1]
     const nextNumbers = Array.from(
@@ -33,14 +32,14 @@ export default function PokemonList() {
           </Suspense>
         ))}
       </div>
-      <Button 
-        onClick={loadMore} 
-        size={"xl"} 
-        className="m-8 w-[300px]" 
+      <Button
+        onClick={loadMore}
+        size={"xl"}
+        className="m-8 w-[300px]"
         variant="ghost"
-    >
+      >
         Load more...
-    </Button>
+      </Button>
     </div>
   )
 }
